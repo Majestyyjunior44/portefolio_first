@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Terminal | Fullstack &amp; Mobile Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-container": "#9f0519",
+                        "on-secondary-container": "#c0d0f7",
+                        "tertiary-container": "#cad4f4",
+                        "primary": "#58f5d1",
+                        "surface-dim": "#010e24",
+                        "on-background": "#dbe6ff",
+                        "tertiary-dim": "#bcc6e5",
+                        "on-secondary": "#394969",
+                        "surface-container-high": "#0b203d",
+                        "surface-container-low": "#02132b",
+                        "secondary-container": "#374767",
+                        "on-primary-fixed-variant": "#006452",
+                        "primary-fixed": "#58f5d1",
+                        "on-tertiary-container": "#3f4963",
+                        "on-secondary-fixed": "#263655",
+                        "inverse-surface": "#f9f9ff",
+                        "surface-bright": "#152c4e",
+                        "surface": "#010e24",
+                        "on-primary-container": "#003f33",
+                        "primary-dim": "#45e7c3",
+                        "tertiary-fixed-dim": "#bcc6e5",
+                        "error-dim": "#d7383b",
+                        "on-secondary-fixed-variant": "#435273",
+                        "secondary-fixed-dim": "#b6c6ed",
+                        "on-error-container": "#ffa8a3",
+                        "on-primary": "#005949",
+                        "outline-variant": "#3b4861",
+                        "inverse-on-surface": "#48556e",
+                        "on-primary-fixed": "#004437",
+                        "background": "#010e24",
+                        "surface-tint": "#58f5d1",
+                        "error": "#ff716c",
+                        "on-surface": "#dbe6ff",
+                        "primary-fixed-dim": "#45e7c3",
+                        "outline": "#687690",
+                        "on-surface-variant": "#9eabc8",
+                        "on-tertiary-fixed": "#2c364f",
+                        "primary-container": "#1cd0ad",
+                        "secondary": "#c4d4fb",
+                        "inverse-primary": "#006c58",
+                        "tertiary": "#d9e2ff",
+                        "surface-container-highest": "#102645",
+                        "surface-variant": "#102645",
+                        "on-error": "#490006",
+                        "surface-container": "#061934",
+                        "on-tertiary": "#47516c",
+                        "surface-container-lowest": "#000000",
+                        "tertiary-fixed": "#cad4f4",
+                        "on-tertiary-fixed-variant": "#48526d",
+                        "secondary-fixed": "#c4d4fb",
+                        "secondary-dim": "#b6c6ed"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #010e24;
+            color: #dbe6ff;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .terminal-trace {
+            position: relative;
+        }
+        .terminal-trace::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(88, 245, 209, 0.2);
+        }
+        .glass-header {
+            background: rgba(1, 14, 36, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 glass-header">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a class="font-['Space_Grotesk'] text-xl font-bold text-primary tracking-tighter" href="#">MAJESTY TECH</a>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Inter'] font-medium text-sm tracking-wide uppercase text-on-surface hover:text-primary transition-colors" href="#about">À propos</a>
+<a class="font-['Inter'] font-medium text-sm tracking-wide uppercase text-on-surface hover:text-primary transition-colors" href="#experience">Expérience</a>
+<a class="font-['Inter'] font-medium text-sm tracking-wide uppercase text-on-surface hover:text-primary transition-colors" href="#projects">Projets</a>
+<a class="font-['Inter'] font-medium text-sm tracking-wide uppercase text-on-surface hover:text-primary transition-colors" href="#contact">Contact</a>
+<a class="px-5 py-2 border border-primary text-primary font-['Space_Grotesk'] text-xs tracking-widest uppercase hover:bg-primary/10 transition-all rounded-sm" href="#">CV</a>
+</div>
+</div>
+</nav>
+<!-- Sidebar Socials (Left Anchor) -->
+<div class="fixed left-6 bottom-0 hidden md:flex flex-col items-center gap-6 after:content-[''] after:w-[1px] after:h-24 after:bg-primary/20">
+<a class="text-on-surface hover:text-primary hover:-translate-y-1 transition-all" href="#">
+<span class="material-symbols-outlined">code</span>
+</a>
+<a class="text-on-surface hover:text-primary hover:-translate-y-1 transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</div>
+<!-- Right Email Anchor -->
+<div class="fixed right-6 bottom-0 hidden md:flex flex-col items-center gap-6 after:content-[''] after:w-[1px] after:h-24 after:bg-primary/20">
+<a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase vertical-text [writing-mode:vertical-rl] text-on-surface hover:text-primary hover:-translate-y-1 transition-all pb-4" href="mailto:hello@terminal.dev">
+            hello@terminal.dev
+        </a>
+</div>
+<main class="max-w-5xl mx-auto px-6 md:px-12">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center py-20" id="hero">
+    <p class="font-['Space_Grotesk'] text-primary mb-5 tracking-widest">SALUT, MON NOM EST</p>
+    <h1 class="text-6xl md:text-8xl font-bold font-headline text-on-surface tracking-tight mb-4">Junior HOUNDONOUGBO.</h1>
+    <h2 class="text-4xl md:text-6xl font-bold font-headline text-on-surface-variant tracking-tight mb-8">Je conçois des solutions web et le mobile.</h2>
+    <p class="text-on-surface-variant max-w-xl text-lg leading-relaxed mb-12">Je suis un 
+        <span class="text-primary">Développeur Fullstack &amp; Mobile (React, Laravel, Flutter &amp; Java)</span> 
+        spécialisé dans la création d'expériences numériques performantes. Actuellement,
+        je me concentre sur le développement d'applications évolutives avec des intégrations de paiement fluides.</p>
+    <div class="flex flex-wrap gap-4">
+    <a class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-['Space_Grotesk'] font-bold rounded-sm hover:opacity-90 transition-opacity" href="#projects">Voir mes projets</a>
+    <a class="px-8 py-4 border border-primary text-primary font-['Space_Grotesk'] font-bold rounded-sm hover:bg-primary/10 transition-all" href="#contact">Me contacter</a>
+    </div>
+</section>
+<!-- About Section -->
+<section class="py-24 terminal-trace" id="about">
+    <div class="flex items-center gap-4 mb-10">
+    <h3 class="text-2xl font-bold text-on-surface flex items-center gap-4"><span class="font-['Space_Grotesk'] text-primary text-lg">01.</span> À propos de moi</h3>
+    <div class="h-[1px] bg-outline-variant flex-grow max-w-xs"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+    <div class="md:col-span-2 space-y-4 text-on-surface-variant leading-relaxed">
+    <p>Bonjour ! Mon intérêt pour le développement a commencé à l'université quand j'ai réalisé le pouvoir du code pour résoudre des problèmes concrets. Aujourd'hui, j'ai eu le privilège de concevoir des applications mobiles et web à fort impact pour diverses startups dans la fintech et la logistique.</p>
+    <p>Mon objectif principal est aujourd'hui de bâtir des <span class="text-primary">produits accessibles et inclusifs</span>.
+        Je m'épanouis à l'intersection d'une logique backend robuste avec Laravel et d'interfaces utilisateur fluides et élégantes avec Flutter or React.</p>
+    <p>Voici quelques technologies avec lesquelles j'ai travaillé récemment :</p>
+    <ul class="grid grid-cols-2 gap-2 font-['Space_Grotesk'] text-sm text-primary">
+    <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> Flutter</li>
+    <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> React</li>
+    <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> Laravel</li>
+    <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> REST APIs</li>
+    <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> Firebase</li>
+    <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> MySQL</li>
+    <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> Wordpress</li>
+    <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> Stripe/Payment APIs</li>
+    </ul>
+    </div>
+    <div class="relative group">
+    <div class="relative z-10 w-full aspect-square rounded-lg bg-primary/20 overflow-hidden">
+    <img class="w-full h-full object-cover grayscale mix-blend-multiply group-hover:grayscale-0 transition-all duration-500" data-alt="Professional headshot of a developer in a dark studio setting with subtle blue backlighting, modern professional aesthetic" src="images/photo_profil.png"/>
+    </div>
+    <div class="absolute inset-0 border-2 border-primary rounded-lg translate-x-5 translate-y-5 -z-10 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform"></div>
+    </div>
+    </div>
+</section>
+<!-- Experience Section -->
+<section class="py-24 terminal-trace" id="experience">
+    <div class="flex items-center gap-4 mb-10">
+    <h3 class="text-2xl font-bold text-on-surface flex items-center gap-4"><span class="font-['Space_Grotesk'] text-primary text-lg">02.</span> Expérience</h3>
+    <div class="h-[1px] bg-outline-variant flex-grow max-w-xs"></div>
+    </div>
+    <div class="space-y-12 max-w-3xl">
+     <!-- Job 1 -->
+        <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary before:rounded-full">
+                <h4 class="text-xl font-bold text-on-surface">Développeur Full-stack (Stagiaire) <span class="text-primary">G-TECH</span></h4>
+                <p class="font-['Space_Grotesk'] text-sm text-on-surface-variant mb-4">Août 2022 - Février 2024</p>
+                <ul class="space-y-3 text-on-surface-variant text-sm">
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Contribution au développement backend avec Laravel (CRUD, MVC, base de données)</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Création d’interfaces mobiles avec Flutter</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Acquisition des fondamentaux de la programmation orientée objet avec Java</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Utilisation des outils de versioning (Git) dans un contexte professionnel</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Participation au cycle de développement : implémentation, test et correction</li>
+                </ul>
+        </div>
+     <!-- Job 2 -->
+        <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-outline-variant before:rounded-full">
+                <h4 class="text-xl font-bold text-on-surface">Développeur Full-stack <span class="text-primary">MAJESTY TECH</span></h4>
+                <p class="font-['Space_Grotesk'] text-sm text-on-surface-variant mb-4">Février 2023 – Novembre 2025</p>
+                <ul class="space-y-3 text-on-surface-variant text-sm">
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Conception et mise en production d’applications web (React, Laravel) sur serveurs applicatifs, avec gestion des configurations et validation des livraisons.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Expérience en déploiement d’applications sur des environnements d’hébergement web ainsi qu’en gestion des mises à jour applicatives.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Supervision et maintenance des applications en production, incluant le diagnostic et la résolution des incidents techniques.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Formation des utilisateurs et support technique afin de garantir une utilisation efficace des solutions.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Intégration et consommation d’APIs pour transactions entre utilisateurs.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Développement et test d’APIs REST conformes aux règles métiers.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Réalisation de tests techniques, fonctionnels et de régression.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Rédaction de rapports détaillés et suivi des anomalies.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Contrôle des formulaires, règles de gestion et performance des applications.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Analyse des besoins fonctionnels et techniques selon les cahiers des charges clients.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Collaboration étroite avec développeurs, administrateurs et chefs de projet pour l’amélioration continue.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Architecture et maintenance d'une application multiplateforme Flutter.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Intégration de passerelles de paiement sécurisées conformes PCI avec Stripe et des prestataires locaux.</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Collaboration avec les designers pour implémenter des composants UI haute performance au pixel près.</li>
+                </ul>
+                <h4>Projets clés :</h4>
+                <ul class="space-y-3 text-on-surface-variant text-sm">
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> ScholarPay – Application de paiement de scolarité (Flutter)</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> OverSea – Application de transfert d'argent (Flutter)</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Application web immobilière – Vente et location</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Site vitrine restaurant</li>
+                    <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Logiciel – Logiciel de gestion de la ponctualité des employés (Java)</li>
+                </ul>
+            </div>
+        <!-- Job  -->
+        <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-outline-variant before:rounded-full">
+                <h4 class="text-xl font-bold text-on-surface">Developpeur Flutter <span class="text-primary">SCARFORST</span></h4>
+                <p class="font-['Space_Grotesk'] text-sm text-on-surface-variant mb-4">Novembre 2025 – Présent</p>
+                <ul class="space-y-3 text-on-surface-variant text-sm">
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Développement d’une application mobile complète de gestion de commandes et réservations pour restaurants et clients, avec une architecture modulaire et évolutive.</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Conception et intégration d’interfaces utilisateur fidèles aux maquettes Figma (pixel-perfect), avec une attention particulière à l’UX/UI et à la fluidité des interactions.</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Intégration et consommation d’APIs REST sécurisées, incluant l’authentification, la gestion des commandes et la synchronisation des données en temps réel.</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Mise en place des notifications push avec Firebase Cloud Messaging (FCM) pour informer les utilisateurs des commandes, des statuts et des promotions.</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Gestion complète du cycle de commande, incluant la création, la validation, le suivi en temps réel et l’historique des transactions.</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Optimisation des performances de l’application à travers la réduction des temps de chargement, une gestion efficace des ressources et une fluidité sur différents types d’appareils.</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Adaptation responsive pour smartphones et tablettes avec prise en compte de multiples résolutions d’écran.</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Collaboration étroite avec l’équipe backend pour le débogage, l’amélioration des performances des APIs et la résolution des incidents techniques.</li>
+                <li class="flex gap-3"><span class="text-primary mt-1">▹</span> Participation aux phases de test, de validation et d’amélioration continue de l’application en environnement réel.</li>
+                </ul>
+            <h4>Projet clé :</h4>
+                 <p class="space-y-3 text-on-surface-variant text-sm">Giveats (français) – Application / Marketplace (Flutter)</p>
+        </div>
+    </div>
+</section>
+<!-- Projects Section -->
+<section class="py-24 terminal-trace" id="projects">
+    <div class="flex items-center gap-4 mb-16">
+    <h3 class="text-2xl font-bold text-on-surface flex items-center gap-4"><span class="font-['Space_Grotesk'] text-primary text-lg">03.</span> Quelques-unes de mes réalisations</h3>
+    <div class="h-[1px] bg-outline-variant flex-grow max-w-xs"></div>
+    </div>
+    <!-- Featured Project: ScholarPay -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center mb-32 group">
+      <div class="lg:col-span-7 relative z-0">
+        <div class="relative aspect-video rounded-lg overflow-hidden bg-surface-container-high">
+          <img class="w-full h-full object-cover opacity-30 group-hover:opacity-100 transition-opacity duration-700" src="images/acceuil_scolarpay.png" alt="ScholarPay - Accueil">
+          <div class="absolute inset-0 bg-primary/20 mix-blend-screen group-hover:bg-transparent transition-all"></div>
+        </div>
+        <div class="relative aspect-video rounded-lg overflow-hidden bg-surface-container-high mt-4">
+          <img class="w-full h-full object-cover opacity-30 group-hover:opacity-100 transition-opacity duration-700" src="images/formulaire_scolarpay.png" alt="ScholarPay - Formulaire">
+          <div class="absolute inset-0 bg-primary/20 mix-blend-screen group-hover:bg-transparent transition-all"></div>
+        </div>
+        <div class="relative aspect-video rounded-lg overflow-hidden bg-surface-container-high mt-4">
+          <img class="w-full h-full object-cover opacity-30 group-hover:opacity-100 transition-opacity duration-700" src="images/paramettre_scolarpay.png" alt="ScholarPay - Paramètres">
+          <div class="absolute inset-0 bg-primary/20 mix-blend-screen group-hover:bg-transparent transition-all"></div>
+        </div>
+        <div class="relative aspect-video rounded-lg overflow-hidden bg-surface-container-high mt-4">
+          <img class="w-full h-full object-cover opacity-30 group-hover:opacity-100 transition-opacity duration-700" src="images/transaction_scolarpay.png" alt="ScholarPay - Transactions">
+          <div class="absolute inset-0 bg-primary/20 mix-blend-screen group-hover:bg-transparent transition-all"></div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 lg:-ml-20 relative z-10 mt-6 lg:mt-0 text-right">
+        <p class="font-['Space_Grotesk'] text-primary text-sm mb-2">Projet à la une</p>
+        <h4 class="text-2xl font-bold text-on-surface mb-4">ScholarPay – Application de paiement de scolarité</h4>
+        <div class="bg-surface-container p-6 rounded-lg shadow-xl mb-4 border-r-4 border-primary">
+          <p class="text-on-surface-variant text-sm leading-relaxed">Une application mobile innovante permettant aux parents de payer les frais de scolarité de leurs enfants en toute simplicité. Développée avec Flutter, elle offre une interface utilisateur intuitive et des fonctionnalités sécurisées.</p>
+        </div>
+        <div class="flex flex-wrap justify-end gap-3 font-['Space_Grotesk'] text-xs text-on-surface-variant mb-6">
+          <span>Flutter</span>
+          <span>Firebase</span>
+          <span>REST APIs</span>
+        </div>
+        <div class="flex justify-end gap-4 text-on-surface">
+          <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">code</span></a>
+          <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">open_in_new</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Project: Site Vitrine Plombier -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center mb-32 group">
+      <div class="lg:col-span-7 relative z-0">
+        <div class="relative aspect-video rounded-lg overflow-hidden bg-surface-container-high">
+          <img class="w-full h-full object-cover opacity-30 group-hover:opacity-100 transition-opacity duration-700" src="images/deboucharge%20de%20climatisation_plombier.png" alt="Site Vitrine Plombier - Débouchage de Climatisation">
+          <div class="absolute inset-0 bg-primary/20 mix-blend-screen group-hover:bg-transparent transition-all"></div>
+        </div>
+        <div class="relative aspect-video rounded-lg overflow-hidden bg-surface-container-high mt-4">
+          <img class="w-full h-full object-cover opacity-30 group-hover:opacity-100 transition-opacity duration-700" src="images/formulaire_plombier.png" alt="Site Vitrine Plombier - Formulaire">
+          <div class="absolute inset-0 bg-primary/20 mix-blend-screen group-hover:bg-transparent transition-all"></div>
+        </div>
+        <div class="relative aspect-video rounded-lg overflow-hidden bg-surface-container-high mt-4">
+          <img class="w-full h-full object-cover opacity-30 group-hover:opacity-100 transition-opacity duration-700" src="images/plombier_1.png" alt="Site Vitrine Plombier - Image 1">
+          <div class="absolute inset-0 bg-primary/20 mix-blend-screen group-hover:bg-transparent transition-all"></div>
+        </div>
+        <div class="relative aspect-video rounded-lg overflow-hidden bg-surface-container-high mt-4">
+          <img class="w-full h-full object-cover opacity-30 group-hover:opacity-100 transition-opacity duration-700" src="images/plombier_2.png" alt="Site Vitrine Plombier - Image 2">
+          <div class="absolute inset-0 bg-primary/20 mix-blend-screen group-hover:bg-transparent transition-all"></div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 lg:-ml-20 relative z-10 mt-6 lg:mt-0 text-right">
+        <p class="font-['Space_Grotesk'] text-primary text-sm mb-2">Projet à la une</p>
+        <h4 class="text-2xl font-bold text-on-surface mb-4">Site Vitrine – Plombier</h4>
+        <div class="bg-surface-container p-6 rounded-lg shadow-xl mb-4 border-r-4 border-primary">
+          <p class="text-on-surface-variant text-sm leading-relaxed">Un site vitrine moderne et professionnel conçu pour un plombier, mettant en avant ses services, ses réalisations et ses coordonnées. Le site est optimisé pour une navigation fluide et une expérience utilisateur agréable.</p>
+        </div>
+        <div class="flex flex-wrap justify-end gap-3 font-['Space_Grotesk'] text-xs text-on-surface-variant mb-6">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+        <div class="flex justify-end gap-4 text-on-surface">
+          <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">code</span></a>
+          <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">open_in_new</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- Bento Grid for Other Projects -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Project Card 1 -->
+    <div class="bg-surface-container p-8 rounded-sm hover:translate-y-[-8px] transition-all duration-300 flex flex-col h-full border-t border-primary/5">
+    <div class="flex justify-between items-center mb-8">
+    <span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'wght' 200;">folder</span>
+    <div class="flex gap-3">
+    <span class="material-symbols-outlined text-sm">code</span>
+    <span class="material-symbols-outlined text-sm">open_in_new</span>
+    </div>
+    </div>
+    <h5 class="text-xl font-bold text-on-surface mb-3 group-hover:text-primary">E-Logistics Dashboard</h5>
+    <p class="text-on-surface-variant text-sm mb-8 flex-grow">Plateforme de suivi de livraison en temps réel avec optimisation automatisée des itinéraires pour les coursiers locaux utilisant les données spatiales MySQL.</p>
+    <div class="flex flex-wrap gap-3 font-['Space_Grotesk'] text-[10px] text-on-surface-variant uppercase tracking-widest">
+    <span>Laravel</span>
+    <span>Leaflet.js</span>
+    <span>MySQL</span>
+    </div>
+    </div>
+    <!-- Project Card 2 -->
+    <div class="bg-surface-container p-8 rounded-sm hover:translate-y-[-8px] transition-all duration-300 flex flex-col h-full border-t border-primary/5">
+    <div class="flex justify-between items-center mb-8">
+    <span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'wght' 200;">shopping_cart</span>
+    <div class="flex gap-3">
+    <span class="material-symbols-outlined text-sm">code</span>
+    <span class="material-symbols-outlined text-sm">open_in_new</span>
+    </div>
+    </div>
+    <h5 class="text-xl font-bold text-on-surface mb-3">Pulse Commerce</h5>
+    <p class="text-on-surface-variant text-sm mb-8 flex-grow">Une API de commerce headless construite avec Laravel, axée sur la vitesse et la mise en cache extrême pour les événements de drop shipping à fort trafic.</p>
+    <div class="flex flex-wrap gap-3 font-['Space_Grotesk'] text-[10px] text-on-surface-variant uppercase tracking-widest">
+    <span>PHP</span>
+    <span>Redis</span>
+    <span>Docker</span>
+    </div>
+    </div>
+    <!-- Project Card 3 -->
+    <div class="bg-surface-container p-8 rounded-sm hover:translate-y-[-8px] transition-all duration-300 flex flex-col h-full border-t border-primary/5">
+    <div class="flex justify-between items-center mb-8">
+    <span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'wght' 200;">api</span>
+    <div class="flex gap-3">
+    <span class="material-symbols-outlined text-sm">code</span>
+    <span class="material-symbols-outlined text-sm">open_in_new</span>
+    </div>
+    </div>
+    <h5 class="text-xl font-bold text-on-surface mb-3">Auth Guard Pro</h5>
+    <p class="text-on-surface-variant text-sm mb-8 flex-grow">Un wrapper OAuth2 robuste pour les applications mobiles offrant une intégration Firebase transparente avec les backends PHP existants.</p>
+    <div class="flex flex-wrap gap-3 font-['Space_Grotesk'] text-[10px] text-on-surface-variant uppercase tracking-widest">
+    <span>Firebase</span>
+    <span>Dart</span>
+    <span>JWT</span>
+    </div>
+    </div>
+    </div>
+</section>
+<!-- Contact Section -->
+    <section class="py-32 text-center max-w-2xl mx-auto" id="contact">
+    <h2 class="text-5xl font-bold font-headline text-on-surface mb-8">Contactez-moi</h2>
+    <p class="text-on-surface-variant mb-12">Je suis actuellement à l'écoute de nouvelles opportunités, ma boîte de réception est toujours ouverte. Que vous ayez une question ou que vous souhaitiez simplement dire bonjour, je ferai de mon mieux pour vous répondre !</p>
+    <a class="inline-block px-10 py-5 border border-primary text-primary font-['Space_Grotesk'] font-bold rounded-sm hover:bg-primary/10 transition-all text-sm uppercase tracking-widest" href="mailto:hello@terminal.dev">Dites bonjour</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-primary/10 flex flex-col items-center justify-center space-y-4">
+    <div class="flex md:hidden gap-6 mb-4 text-on-surface-variant">
+    <span class="material-symbols-outlined">code</span>
+    <span class="material-symbols-outlined">person</span>
+    </div>
+    <p class="font-['Space_Grotesk'] text-xs font-light text-on-background/60">
+                Built by The Digital Architect © 2024
+            </p>
+    <div class="flex gap-8">
+    <a class="font-['Space_Grotesk'] text-xs text-on-background/40 hover:text-primary transition-colors" href="#">Politique de confidentialité</a>
+    <a class="font-['Space_Grotesk'] text-xs text-on-background/40 hover:text-primary transition-colors" href="#">Conditions d'utilisation</a>
+    </div>
+</footer>
+</body>
+</html>
