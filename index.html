@@ -1,323 +1,248 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Junior HOUNDONOUGBO | Développeur Full Stack &amp; Mobile</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "error-container": "#9f0519",
-                        "on-secondary-container": "#c0d0f7",
-                        "tertiary-container": "#cad4f4",
-                        "primary": "#58f5d1",
-                        "surface-dim": "#010e24",
-                        "on-background": "#dbe6ff",
-                        "tertiary-dim": "#bcc6e5",
-                        "on-secondary": "#394969",
-                        "surface-container-high": "#0b203d",
-                        "surface-container-low": "#02132b",
-                        "secondary-container": "#374767",
-                        "on-primary-fixed-variant": "#006452",
-                        "primary-fixed": "#58f5d1",
-                        "on-tertiary-container": "#3f4963",
-                        "on-secondary-fixed": "#263655",
-                        "inverse-surface": "#f9f9ff",
-                        "surface-bright": "#152c4e",
-                        "surface": "#010e24",
-                        "on-primary-container": "#003f33",
-                        "primary-dim": "#45e7c3",
-                        "tertiary-fixed-dim": "#bcc6e5",
-                        "error-dim": "#d7383b",
-                        "on-secondary-fixed-variant": "#435273",
-                        "secondary-fixed-dim": "#b6c6ed",
-                        "on-error-container": "#ffa8a3",
-                        "on-primary": "#005949",
-                        "outline-variant": "#3b4861",
-                        "inverse-on-surface": "#48556e",
-                        "on-primary-fixed": "#004437",
-                        "background": "#010e24",
-                        "surface-tint": "#58f5d1",
-                        "error": "#ff716c",
-                        "on-surface": "#dbe6ff",
-                        "primary-fixed-dim": "#45e7c3",
-                        "outline": "#687690",
-                        "on-surface-variant": "#9eabc8",
-                        "on-tertiary-fixed": "#2c364f",
-                        "primary-container": "#1cd0ad",
-                        "secondary": "#c4d4fb",
-                        "inverse-primary": "#006c58",
-                        "tertiary": "#d9e2ff",
-                        "surface-container-highest": "#102645",
-                        "surface-variant": "#102645",
-                        "on-error": "#490006",
-                        "surface-container": "#061934",
-                        "on-tertiary": "#47516c",
-                        "surface-container-lowest": "#000000",
-                        "tertiary-fixed": "#cad4f4",
-                        "on-tertiary-fixed-variant": "#48526d",
-                        "secondary-fixed": "#c4d4fb",
-                        "secondary-dim": "#b6c6ed"
-                    },
-                    fontFamily: {
-                        "headline": ["Inter"],
-                        "body": ["Inter"],
-                        "label": ["Space Grotesk"]
-                    },
-                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-                },
-            },
-        }
-    </script>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ulrich Junior Houndonougbo · Développeur Full Stack &amp; Mobile</title>
+<meta name="description" content="Portfolio d’Ulrich Junior Houndonougbo, développeur Laravel, Spring Boot et Flutter spécialisé en fintech.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-        body {
-            background-color: #010e24;
-            color: #dbe6ff;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .terminal-trace {
-            position: relative;
-        }
-        .terminal-trace::before {
-            content: '';
-            position: absolute;
-            left: -2rem;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: rgba(88, 245, 209, 0.2);
-        }
-        .glass-header {
-            background: rgba(1, 14, 36, 0.6);
-            backdrop-filter: blur(12px);
-        }
-    </style>
+:root{
+  --bg:#f6f7f4;--surface:#ffffff;--ink:#17211c;--muted:#56625c;--line:#dde3dd;
+  --brand:#0f5d40;--brand-ink:#ffffff;--accent:#e2a72e;--chip:#e8efe9;
+  --panel:#12251d;--panel-ink:#e9f2ec;--panel-line:#27433a;
+  color-scheme:light;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1612;--surface:#15201a;--ink:#e8efe9;--muted:#9fb0a6;--line:#25352c;
+  --brand:#4cc08f;--brand-ink:#08140e;--accent:#e8b94a;--chip:#1c2b23;
+  --panel:#0a110d;--panel-ink:#e9f2ec;--panel-line:#25352c;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1612;--surface:#15201a;--ink:#e8efe9;--muted:#9fb0a6;--line:#25352c;
+  --brand:#4cc08f;--brand-ink:#08140e;--accent:#e8b94a;--chip:#1c2b23;
+  --panel:#0a110d;--panel-ink:#e9f2ec;--panel-line:#25352c;color-scheme:dark}
+html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font:700 18px "Bricolage Grotesque",sans-serif;text-decoration:none}
+nav{display:flex;gap:22px;font-size:15px;overflow-x:auto}
+nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+nav a:hover{color:var(--ink)}
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6vw,68px);font-weight:700}
+.role{margin:18px 0 0;font-size:20px;color:var(--brand);font-weight:600}
+.lead{margin:20px 0 0;color:var(--muted);max-width:56ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:13px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:1.5px solid var(--brand)}
+.btn.main{background:var(--brand);color:var(--brand-ink)}
+.btn:hover{transform:translateY(-1px)}
+.flow{background:var(--panel);color:var(--panel-ink);border-radius:14px;padding:26px;border:1px solid var(--panel-line)}
+.flow h2{font-size:15px;font-weight:500;color:#9fb0a6;margin-bottom:18px}
+.step{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--panel-line)}
+.step:first-of-type{border-top:0}
+.step b{flex:none;width:28px;height:28px;border-radius:50%;background:#4cc08f;color:#08140e;display:grid;place-items:center;font:700 13px "Bricolage Grotesque",sans-serif}
+.step span{display:block;font-weight:600;line-height:1.3}
+.step small{color:#9fb0a6;font-size:14px;line-height:1.4}
+.flow .done{margin-top:12px;padding:12px 14px;border-radius:8px;background:rgba(226,167,46,.14);color:#f0cf7d;font-weight:600;font-size:15px}
+section{padding:72px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(28px,4vw,40px);margin-bottom:12px}
+.sub{color:var(--muted);margin:0 0 36px;max-width:60ch}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.facts div{padding:22px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts strong{display:block;font:700 22px "Bricolage Grotesque",sans-serif}
+.facts span{color:var(--muted);font-size:15px}
+.job{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:30px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{color:var(--muted);font-size:15px}
+.job h3{font-size:22px}
+.org{color:var(--brand);font-weight:600;margin:4px 0 12px}
+.job ul{margin:0;padding-left:20px;color:var(--muted)}
+.job li{margin:6px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.card.big{grid-column:1/-1;border-left:5px solid var(--accent)}
+.card h3{font-size:21px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.tags span{background:var(--chip);border-radius:6px;padding:3px 10px;font-size:13.5px;font-weight:500}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.skills h3{font-size:17px;margin-bottom:10px;color:var(--brand)}
+.skills p{margin:0;color:var(--muted);font-size:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.two ul{list-style:none;padding:0;margin:0}
+.two li{padding:12px 0;border-top:1px solid var(--line)}
+.two li small{display:block;color:var(--muted)}
+.contact{background:var(--panel);color:var(--panel-ink);border-radius:16px;padding:48px;text-align:left;border:1px solid var(--panel-line)}
+.contact h2{margin-bottom:14px}
+.contact p{color:#b5c4bb;max-width:52ch;margin:0 0 26px}
+.contact .btn.main{background:#4cc08f;color:#08140e;border-color:#4cc08f}
+.contact .btn{border-color:#4cc08f;color:#e9f2ec}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px;text-align:center}
+@media (max-width:820px){
+  .hero .wrap,.two{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:6px}
+  .facts div{border-right:0;border-bottom:1px solid var(--line)}
+  .facts div:last-child{border-bottom:0}
+  .contact{padding:32px 24px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
 </head>
-<body class="antialiased selection:bg-primary/30 selection:text-primary">
-<!-- Top Navigation Shell -->
-<nav class="fixed top-0 w-full z-50 glass-header">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-<a class="font-['Space_Grotesk'] text-xl font-bold text-primary tracking-tighter" href="#">JUNIOR HOUNDONOUGBO</a>
-<!-- Desktop Links -->
-<div class="hidden md:flex items-center gap-10">
-<a class="font-['Inter'] font-medium text-sm tracking-wide uppercase text-on-surface hover:text-primary transition-colors" href="#about">À propos</a>
-<a class="font-['Inter'] font-medium text-sm tracking-wide uppercase text-on-surface hover:text-primary transition-colors" href="#experience">Expérience</a>
-<a class="font-['Inter'] font-medium text-sm tracking-wide uppercase text-on-surface hover:text-primary transition-colors" href="#projects">Projets</a>
-<a class="font-['Inter'] font-medium text-sm tracking-wide uppercase text-on-surface hover:text-primary transition-colors" href="#contact">Contact</a>
-<a class="px-5 py-2 border border-primary text-primary font-['Space_Grotesk'] text-xs tracking-widest uppercase hover:bg-primary/10 transition-all rounded-sm" href="CV.pdf" download>CV</a>
-</div>
-</div>
-</nav>
-<!-- Sidebar Socials (Left Anchor) -->
-<div class="fixed left-6 bottom-0 hidden md:flex flex-col items-center gap-6 after:content-[''] after:w-[1px] after:h-24 after:bg-primary/20">
-<a class="text-on-surface hover:text-primary hover:-translate-y-1 transition-all" href="#">
-<span class="material-symbols-outlined">code</span>
-</a>
-<a class="text-on-surface hover:text-primary hover:-translate-y-1 transition-all" href="#">
-<span class="material-symbols-outlined">person</span>
-</a>
-</div>
-<!-- Right Email Anchor -->
-<div class="fixed right-6 bottom-0 hidden md:flex flex-col items-center gap-6 after:content-[''] after:w-[1px] after:h-24 after:bg-primary/20">
-<a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase vertical-text [writing-mode:vertical-rl] text-on-surface hover:text-primary hover:-translate-y-1 transition-all pb-4" href="mailto:juniorhoundonougou@gmail.com">
-            juniorhoundonougou@gmail.com
-        </a>
-</div>
-<main class="max-w-5xl mx-auto px-6 md:px-12">
-<!-- Hero Section -->
-<section class="min-h-screen flex flex-col justify-center py-20" id="hero">
-    <p class="font-['Space_Grotesk'] text-primary mb-5 tracking-widest">SALUT, MON NOM EST</p>
-    <h1 class="text-6xl md:text-8xl font-bold font-headline text-on-surface tracking-tight mb-4">Junior HOUNDONOUGBO.</h1>
-    <h2 class="text-4xl md:text-6xl font-bold font-headline text-on-surface-variant tracking-tight mb-8">Je transforme des idées en solutions web et mobiles.</h2>
-    <p class="text-on-surface-variant max-w-xl text-lg leading-relaxed mb-12">
-        Je suis <span class="text-primary">Développeur Full Stack &amp; Mobile</span>, spécialisé dans Laravel, React.js, Flutter, MySQL et les APIs REST.
-        Je conçois des applications utiles, maintenables et adaptées aux besoins réels des utilisateurs.
-    </p>
-    <div class="flex flex-wrap gap-4">
-    <a class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-['Space_Grotesk'] font-bold rounded-sm hover:opacity-90 transition-opacity" href="#projects">Voir mes projets</a>
-    <a class="px-8 py-4 border border-primary text-primary font-['Space_Grotesk'] font-bold rounded-sm hover:bg-primary/10 transition-all" href="#contact">Me contacter</a>
-    </div>
-</section>
-<!-- About Section -->
-<section class="py-24 terminal-trace" id="about">
-    <div class="flex items-center gap-4 mb-10">
-      <h3 class="text-2xl font-bold text-on-surface flex items-center gap-4"><span class="font-['Space_Grotesk'] text-primary text-lg">01.</span> À propos de moi</h3>
-      <div class="h-[1px] bg-outline-variant flex-grow max-w-xs"></div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-      <div class="md:col-span-2 space-y-4 text-on-surface-variant leading-relaxed">
-        <p>Développeur Full Stack &amp; Mobile avec plus de trois années d'expérience pratique, je travaille sur la conception et le développement d'applications web et mobiles.</p>
-        <p>J'interviens sur l'analyse des besoins, la conception des fonctionnalités, le développement frontend et backend, l'intégration d'APIs REST, la gestion des données, les tests et la correction des anomalies.</p>
-        <p>Mon objectif est de construire des solutions fiables et simples à utiliser, en combinant un backend structuré avec Laravel et des interfaces modernes avec React.js et Flutter.</p>
-        <p>Technologies principales :</p>
-        <ul class="grid grid-cols-2 gap-2 font-['Space_Grotesk'] text-sm text-primary">
-          <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> Laravel</li>
-          <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> React.js</li>
-          <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> Flutter</li>
-          <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> Dart</li>
-          <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> PHP</li>
-          <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> MySQL</li>
-          <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> REST APIs</li>
-          <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> Firebase</li>
-          <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> Git / GitHub / GitLab</li>
-          <li class="flex items-center gap-2"><span class="text-[10px]">▹</span> WordPress</li>
-        </ul>
-      </div>
-      <div class="relative group">
-        <div class="relative z-10 w-full aspect-square rounded-lg bg-primary/20 overflow-hidden">
-          <img class="w-full h-full object-cover grayscale mix-blend-multiply group-hover:grayscale-0 transition-all duration-500" data-alt="Photo professionnelle de Junior HOUNDONOUGBO" src="images/photo_profil.png"/>
-        </div>
-        <div class="absolute inset-0 border-2 border-primary rounded-lg translate-x-5 translate-y-5 -z-10 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform"></div>
-      </div>
-    </div>
-  </section>
-<!-- Experience Section -->
-<section class="py-24 terminal-trace" id="experience">
-    <div class="flex items-center gap-4 mb-10">
-      <h3 class="text-2xl font-bold text-on-surface flex items-center gap-4"><span class="font-['Space_Grotesk'] text-primary text-lg">02.</span> Expérience</h3>
-      <div class="h-[1px] bg-outline-variant flex-grow max-w-xs"></div>
-    </div>
-    <div class="space-y-12 max-w-3xl">
-      <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary before:rounded-full">
-        <h4 class="text-xl font-bold text-on-surface">Développeur Full Stack <span class="text-primary">G-TECH</span></h4>
-        <p class="font-['Space_Grotesk'] text-sm text-on-surface-variant mb-4">Cotonou · Août 2023 – Aujourd'hui</p>
-        <ul class="space-y-3 text-on-surface-variant text-sm">
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Analyse des besoins fonctionnels et traduction en fonctionnalités techniques.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Développement d'interfaces web avec React.js et de fonctionnalités backend avec Laravel.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Conception et intégration d'APIs REST consommées par les applications web et mobiles.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Structuration et exploitation des données MySQL.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Tests techniques et fonctionnels, diagnostic des anomalies et correction.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Versionnement du code avec Git, GitHub et GitLab.</li>
-        </ul>
-      </div>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top">U. J. Houndonougbo</a>
+  <nav aria-label="Navigation principale">
+    <a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#contact">Contact</a>
+  </nav>
+</div></header>
 
-      <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary before:rounded-full">
-        <h4 class="text-xl font-bold text-on-surface">Développeur Flutter <span class="text-primary">SCARFORST</span></h4>
-        <p class="font-['Space_Grotesk'] text-sm text-on-surface-variant mb-4">Cotonou · Novembre 2025 – Aujourd'hui</p>
-        <ul class="space-y-3 text-on-surface-variant text-sm">
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Développement d'une application mobile de gestion des commandes et réservations pour restaurants.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Traduction des maquettes Figma en interfaces Flutter pour smartphones et tablettes.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Intégration et consommation d'APIs REST pour les commandes, réservations, menus et statuts.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Implémentation des parcours d'acceptation, de préparation et de suivi des commandes.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Gestion de l'authentification et de l'état des fonctionnalités mobiles.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Intégration des notifications push avec Firebase Cloud Messaging (FCM).</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Correction des anomalies et amélioration progressive de la stabilité et des performances.</li>
-          <li class="flex gap-3"><span class="text-primary mt-1">▹</span>Utilisation de Git/GitLab pour organiser et suivre le développement.</li>
-        </ul>
-      </div>
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Ulrich Junior Houndonougbo</h1>
+    <p class="role">Développeur Full Stack &amp; Mobile, spécialisé fintech</p>
+    <p class="lead">Je conçois des API REST sécurisées avec Laravel et Spring Boot, et des applications Flutter pour les paiements, les transferts d’argent et la vérification d’identité (KYC). Fondateur de Majesty Tech, basé à Abomey-Calavi, Bénin.</p>
+    <div class="cta">
+      <a class="btn main" href="#projets">Voir mes projets</a>
+      <a class="btn" href="#contact">Me contacter</a>
     </div>
-  </section>
-<!-- Projects Section -->
-<section class="py-24 terminal-trace" id="projects">
-    <div class="flex items-center gap-4 mb-16">
-      <h3 class="text-2xl font-bold text-on-surface flex items-center gap-4"><span class="font-['Space_Grotesk'] text-primary text-lg">03.</span> Mes projets</h3>
-      <div class="h-[1px] bg-outline-variant flex-grow max-w-xs"></div>
+  </div>
+  <aside class="flow" aria-label="Chemin sécurisé d’un transfert">
+    <h2>Ce que je construis : un transfert, de bout en bout</h2>
+    <div class="step"><b>1</b><div><span>Connexion sécurisée</span><small>Spring Security, OAuth2, JWT, biométrie</small></div></div>
+    <div class="step"><b>2</b><div><span>Double authentification</span><small>Code OTP par SMS ou e-mail</small></div></div>
+    <div class="step"><b>3</b><div><span>Données protégées</span><small>Chiffrement AES-256, TLS 1.3</small></div></div>
+    <div class="step"><b>4</b><div><span>Transaction fiable</span><small>MySQL, garanties ACID, tâches RabbitMQ</small></div></div>
+    <div class="done">Transfert confirmé, notification envoyée</div>
+  </aside>
+</div></div>
+
+<section style="padding-top:48px"><div class="wrap">
+  <div class="facts">
+    <div><strong>3 ans et plus</strong><span>d’expérience en développement backend</span></div>
+    <div><strong>7 projets</strong><span>livrés ou menés, de la fintech au web</span></div>
+    <div><strong>Application de paiement mobile</strong><span>menée de bout en bout : backend, app, dashboard</span></div>
+  </div>
+</div></section>
+
+<section id="parcours"><div class="wrap">
+  <h2>Parcours</h2>
+  <p class="sub">Du stage en production jusqu’à la direction technique d’une application de paiement.</p>
+
+  <article class="job">
+    <div class="when">Mars 2024 – Mars 2026<br>Calavi</div>
+    <div>
+      <h3>Développeur Full Stack</h3>
+      <div class="org">Majesty Tech</div>
+      <ul>
+        <li>Backend Java / Spring Boot et MySQL, API REST pour des opérations bancaires critiques avec garanties ACID.</li>
+        <li>Sécurité : Spring Security, OAuth2, JWT, OTP, chiffrement AES-256, TLS 1.3. Notifications et tâches de fond avec RabbitMQ.</li>
+        <li>Application Flutter : authentification biométrique, transferts par numéro de téléphone ou QR Code, passerelles de paiement bancaires, état géré avec Bloc / Provider.</li>
+        <li>Parcours KYC, suivi du solde en temps réel, export d’historiques, paiement de factures (services publics, scolarité).</li>
+        <li>Dashboard d’administration : suivi anti-fraude, validation des comptes, plafonds de transfert dynamiques, rapports comptables automatisés.</li>
+      </ul>
     </div>
+  </article>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-surface-container p-8 rounded-sm hover:translate-y-[-8px] transition-all duration-300 flex flex-col h-full border-t border-primary/5">
-        <div class="flex justify-between items-center mb-8">
-          <span class="material-symbols-outlined text-primary text-4xl">home_work</span>
-          <span class="text-xs text-primary font-['Space_Grotesk']">FULL STACK</span>
-        </div>
-        <h5 class="text-xl font-bold text-on-surface mb-3">FindRoom</h5>
-        <p class="text-on-surface-variant text-sm mb-8 flex-grow">Plateforme de recherche de chambres à louer, boutiques, chambres d'hôtel et chambres d'auberge, conçue pour permettre aux utilisateurs de rechercher et consulter des annonces sans passer par un intermédiaire.</p>
-        <div class="flex flex-wrap gap-3 font-['Space_Grotesk'] text-[10px] text-on-surface-variant uppercase tracking-widest">
-          <span>Laravel</span><span>React.js</span><span>MySQL</span><span>REST API</span>
-        </div>
-      </div>
-
-      <div class="bg-surface-container p-8 rounded-sm hover:translate-y-[-8px] transition-all duration-300 flex flex-col h-full border-t border-primary/5">
-        <div class="flex justify-between items-center mb-8">
-          <span class="material-symbols-outlined text-primary text-4xl">storefront</span>
-          <span class="text-xs text-primary font-['Space_Grotesk']">FULL STACK</span>
-        </div>
-        <h5 class="text-xl font-bold text-on-surface mb-3">2nd_market</h5>
-        <p class="text-on-surface-variant text-sm mb-8 flex-grow">Plateforme d'achat et de vente de biens d'occasion permettant aux utilisateurs de publier, consulter et gérer des annonces avec images, catégories et informations sur les articles.</p>
-        <div class="flex flex-wrap gap-3 font-['Space_Grotesk'] text-[10px] text-on-surface-variant uppercase tracking-widest">
-          <span>Laravel</span><span>PHP</span><span>React.js</span><span>MySQL</span><span>REST API</span>
-        </div>
-      </div>
-
-      <div class="bg-surface-container p-8 rounded-sm hover:translate-y-[-8px] transition-all duration-300 flex flex-col h-full border-t border-primary/5">
-        <div class="flex justify-between items-center mb-8">
-          <span class="material-symbols-outlined text-primary text-4xl">school</span>
-          <span class="text-xs text-primary font-['Space_Grotesk']">MOBILE</span>
-        </div>
-        <h5 class="text-xl font-bold text-on-surface mb-3">ScholarPay</h5>
-        <p class="text-on-surface-variant text-sm mb-8 flex-grow">Application mobile de paiement et de suivi des frais scolaires. Développement des interfaces Flutter, navigation, intégration des données backend et adaptation aux différentes tailles d'écran.</p>
-        <div class="flex flex-wrap gap-3 font-['Space_Grotesk'] text-[10px] text-on-surface-variant uppercase tracking-widest">
-          <span>Flutter</span><span>Dart</span><span>Firebase</span>
-        </div>
-      </div>
-
-      <div class="bg-surface-container p-8 rounded-sm hover:translate-y-[-8px] transition-all duration-300 flex flex-col h-full border-t border-primary/5">
-        <div class="flex justify-between items-center mb-8">
-          <span class="material-symbols-outlined text-primary text-4xl">payments</span>
-          <span class="text-xs text-primary font-['Space_Grotesk']">MOBILE / FINTECH</span>
-        </div>
-        <h5 class="text-xl font-bold text-on-surface mb-3">Fluxia</h5>
-        <p class="text-on-surface-variant text-sm mb-8 flex-grow">Application mobile fintech développée avec Flutter pour des parcours liés aux paiements et à la gestion des transactions, avec intégration de données backend et tests des parcours utilisateurs.</p>
-        <div class="flex flex-wrap gap-3 font-['Space_Grotesk'] text-[10px] text-on-surface-variant uppercase tracking-widest">
-          <span>Flutter</span><span>Dart</span><span>APIs</span>
-        </div>
-      </div>
-
-      <div class="bg-surface-container p-8 rounded-sm hover:translate-y-[-8px] transition-all duration-300 flex flex-col h-full border-t border-primary/5">
-        <div class="flex justify-between items-center mb-8">
-          <span class="material-symbols-outlined text-primary text-4xl">restaurant</span>
-          <span class="text-xs text-primary font-['Space_Grotesk']">MOBILE</span>
-        </div>
-        <h5 class="text-xl font-bold text-on-surface mb-3">Giveats</h5>
-        <p class="text-on-surface-variant text-sm mb-8 flex-grow">Application mobile de gestion des commandes et réservations pour restaurants et clients, avec intégration d'APIs REST, notifications push FCM et gestion des statuts de commande.</p>
-        <div class="flex flex-wrap gap-3 font-['Space_Grotesk'] text-[10px] text-on-surface-variant uppercase tracking-widest">
-          <span>Flutter</span><span>REST API</span><span>Firebase FCM</span>
-        </div>
-      </div>
-
-      <div class="bg-surface-container p-8 rounded-sm hover:translate-y-[-8px] transition-all duration-300 flex flex-col h-full border-t border-primary/5">
-        <div class="flex justify-between items-center mb-8">
-          <span class="material-symbols-outlined text-primary text-4xl">account_balance</span>
-          <span class="text-xs text-primary font-['Space_Grotesk']">FINTECH</span>
-        </div>
-        <h5 class="text-xl font-bold text-on-surface mb-3">PAL / Flomoney</h5>
-        <p class="text-on-surface-variant text-sm mb-8 flex-grow">Expérience technique sur une solution fintech autour de Flomoney : intégration d'APIs, gestion des données, parcours fonctionnels, tests et amélioration des fonctionnalités.</p>
-        <div class="flex flex-wrap gap-3 font-['Space_Grotesk'] text-[10px] text-on-surface-variant uppercase tracking-widest">
-          <span>Mobile</span><span>APIs</span><span>Fintech</span>
-        </div>
-      </div>
+  <article class="job">
+    <div class="when">Depuis nov. 2025<br>Cotonou</div>
+    <div>
+      <h3>Développeur Flutter</h3>
+      <div class="org">SCARFORST</div>
+      <ul>
+        <li>Application mobile de gestion de commandes et de réservations pour restaurants et clients, à l’architecture modulaire.</li>
+        <li>Interfaces fidèles aux maquettes Figma, notifications push Firebase Cloud Messaging, synchronisation en temps réel.</li>
+        <li>Optimisation des temps de chargement, affichage adapté aux smartphones et tablettes.</li>
+      </ul>
     </div>
-  </section>
-<!-- Contact Section -->
-    <section class="py-32 text-center max-w-2xl mx-auto" id="contact">
-    <h2 class="text-5xl font-bold font-headline text-on-surface mb-8">Travaillons ensemble</h2>
-    <p class="text-on-surface-variant mb-6">Vous avez un projet web, mobile ou une idée à transformer en solution numérique ? Je suis disponible pour échanger sur vos besoins et les possibilités de collaboration.</p>
-    <p class="text-on-surface-variant mb-12">Abomey-Calavi, Bénin · +229 01 67 64 53 68 · +229 01 43 26 57 99</p>
-    <a class="inline-block px-10 py-5 border border-primary text-primary font-['Space_Grotesk'] font-bold rounded-sm hover:bg-primary/10 transition-all text-sm uppercase tracking-widest" href="mailto:juniorhoundonougou@gmail.com">Me contacter</a>
-  </section>
+  </article>
+
+  <article class="job">
+    <div class="when">Août 2023 – Fév. 2024<br>Cotonou</div>
+    <div>
+      <h3>Stagiaire Développeur Full-Stack</h3>
+      <div class="org">G-TECH</div>
+      <ul>
+        <li>Applications web Laravel et React mises en production : configuration, validation des livraisons, mises à jour.</li>
+        <li>API REST Laravel, dont des API de transactions entre utilisateurs. Tests fonctionnels et de régression, suivi des anomalies.</li>
+        <li>Supervision en production, résolution d’incidents, formation et support des utilisateurs.</li>
+      </ul>
+    </div>
+  </article>
+</div></section>
+
+<section id="projets"><div class="wrap">
+  <h2>Projets</h2>
+  <p class="sub">Une sélection de ce que j’ai conçu et développé.</p>
+  <div class="grid">
+    <article class="card big">
+      <h3>MoneyCash</h3>
+      <p>Application de transfert d’argent : envoi par numéro de téléphone ou QR Code, authentification renforcée et API bancaires sécurisées.</p>
+      <div class="tags"><span>Flutter</span><span>Spring Boot</span><span>Fintech</span></div>
+    </article>
+    <article class="card"><h3>ScholarPay</h3><p>Application de paiement de scolarité.</p><div class="tags"><span>Laravel</span><span>Flutter</span></div></article>
+    <article class="card"><h3>Fluxia</h3><p>Application de paiement de frais de formation.</p><div class="tags"><span>Laravel</span><span>Flutter</span></div></article>
+    <article class="card"><h3>2nd Market</h3><p>Plateforme web de vente sécurisée de moyens automobiles d’occasion.</p><div class="tags"><span>Laravel</span><span>React</span></div></article>
+    <article class="card"><h3>Giveats</h3><p>Application mobile de type marketplace.</p><div class="tags"><span>Flutter</span></div></article>
+    <article class="card"><h3>Gestion de la ponctualité</h3><p>Logiciel de suivi de la ponctualité des employés.</p><div class="tags"><span>Java</span></div></article>
+    <article class="card"><h3>Site Majesty Tech</h3><p>Conception et réalisation du site web de l’entreprise.</p><div class="tags"><span>Site web</span></div></article>
+  </div>
+</div></section>
+
+<section id="competences"><div class="wrap">
+  <h2>Compétences</h2>
+  <p class="sub">J’utilise Cursor et Kilo Code pour aller plus vite, mais je comprends, relis et teste tout ce que je livre.</p>
+  <div class="skills">
+    <div><h3>Langages</h3><p>PHP, Java, Dart, SQL</p></div>
+    <div><h3>Backend</h3><p>Laravel, Spring Boot, MySQL, RabbitMQ</p></div>
+    <div><h3>Frontend et mobile</h3><p>Flutter, React, HTML / CSS</p></div>
+    <div><h3>Sécurité</h3><p>Spring Security, OAuth2, JWT, 2FA / OTP, AES-256, TLS 1.3</p></div>
+    <div><h3>Tests et qualité</h3><p>Tests fonctionnels et de régression, analyse de bugs, rapports d’anomalies</p></div>
+    <div><h3>Outils</h3><p>Firebase, Git / GitHub / GitLab, WordPress, Cursor, Kilo Code</p></div>
+    <div><h3>Finance et données</h3><p>Perfect Vision (microfinance), KoboToolbox, KoboCollect, ODK</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap two">
+  <div>
+    <h2>Formation</h2>
+    <ul>
+      <li>Licence Professionnelle en Système Informatique et Logiciel<small>ESM-Bénin, 2021 – 2023</small></li>
+      <li>Baccalauréat D<small>CEG 5 Bohicon, 2019 – 2020</small></li>
+    </ul>
+  </div>
+  <div>
+    <h2>Langues et autres expériences</h2>
+    <ul>
+      <li>Français et Fon<small>Langues natives</small></li>
+      <li>Anglais<small>Niveau intermédiaire</small></li>
+      <li>Community Manager et monteur vidéo, CREDIJ &amp; Cabinet SCPA D2A<small>Mars 2025 – Mars 2026, campagnes Meta Ads avec un ROI moyen de 3,2x</small></li>
+      <li>Business Developer, Label Group<small>Sept. – Déc. 2024, prospection et développement du portefeuille clients</small></li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <h2>Un projet fintech ou mobile ?</h2>
+    <p>Écrivez-moi pour discuter d’une application de paiement, d’une API sécurisée ou d’un produit Flutter. Références professionnelles disponibles sur demande.</p>
+    <div class="cta">
+      <a class="btn main" href="mailto:juniorhoundonougbo@gmail.com">juniorhoundonougbo@gmail.com</a>
+      <a class="btn" href="#top">Retour en haut</a>
+    </div>
+  </div>
+</div></section>
 </main>
-<!-- Footer -->
-<footer class="w-full py-12 border-t border-primary/10 flex flex-col items-center justify-center space-y-4">
-    <div class="flex md:hidden gap-6 mb-4 text-on-surface-variant">
-    <span class="material-symbols-outlined">code</span>
-    <span class="material-symbols-outlined">person</span>
-    </div>
-    <p class="font-['Space_Grotesk'] text-xs font-light text-on-background/60">
-                Junior HOUNDONOUGBO © 2026
-            </p>
-    <div class="flex gap-8">
-    <span class="font-['Space_Grotesk'] text-xs text-on-background/40">Développeur Full Stack & Mobile</span>
-    </div>
-</footer>
+<footer><div class="wrap">Ulrich Junior Houndonougbo · Abomey-Calavi, Bénin · LinkedIn : Ulrich Junior Houndonougbo</div></footer>
 </body>
 </html>
